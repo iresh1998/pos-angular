@@ -1,13 +1,13 @@
 <br>
 <br>
-
+<form [formGroup]="form" (ngSubmit)="saveCustomer()">
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-4 col-lg-4 wrapper">
       <form class="example-form">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Full Name</mat-label>
-          <input type="email" matInput
+          <input formControlName="fullName" type="text" matInput
                  placeholder="Ex. saman Silva">
         </mat-form-field>
       </form>
@@ -16,7 +16,7 @@
       <form class="example-form">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Address</mat-label>
-          <input type="text" matInput
+          <input formControlName="address" type="text" matInput
                  placeholder="Ex. Colombo">
         </mat-form-field>
       </form>
@@ -25,17 +25,18 @@
       <form class="example-form">
         <mat-form-field class="full-width" appearance="outline">
           <mat-label>Salary</mat-label>
-          <input type="number" matInput
+          <input formControlName="salary" type="number" matInput
                  placeholder="Rs. 5000000">
         </mat-form-field>
       </form>
     </div>
     <div class="col-12 col-md-4 col-lg-4 wrapper">
-      <input type="file">
+      <input type="file" formControlName="avatar">
     </div>
     <div class="col-12 wrapper">
       <div style="display: flex; align-items: center; justify-content: flex-end; margin-top: 20px;"></div>
-      <button mat-raised-button color="primary">Save Customer</button>
+      <button [disabled]="form.invalid || loading" mat-raised-button color="primary">Save Customer</button>
     </div>
   </div>
 </div>
+</form>

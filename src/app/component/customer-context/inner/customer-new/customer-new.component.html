@@ -1,5 +1,9 @@
 <br>
 <br>
+<mat-progress-bar *ngIf="loading" mode="determinate" value="{{uploadRate | async}}"></mat-progress-bar>
+<br>
+<br>
+
 <form [formGroup]="form" (ngSubmit)="saveCustomer()">
 <div class="container">
   <div class="row">

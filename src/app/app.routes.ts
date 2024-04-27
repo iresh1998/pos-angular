@@ -15,7 +15,7 @@ export const routes: Routes = [
       {path: 'home', component: DashboardHomeComponent},
       {
         path:'customers',component:CustomerContextComponent,children:[
-          {path:'',redirectTo:'/dashboard/customer/new',pathMatch:'full'},
+          {path:'',redirectTo:'/dashboard/customers/new',pathMatch:'full'},
           {path:'new',component:CustomerNewComponent},
           {path:'update',component:CustomerUpdateComponent},
           {path:'list',component:CustomerAllComponent},
